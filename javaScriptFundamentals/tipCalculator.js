@@ -76,3 +76,57 @@ for (let i = 0; i < bills.length; i++) {
     total[i] = bills[i] + tips[i];
 }
 console.log(total);
+
+
+
+// Coding Challenge #8
+
+/*
+Let's improve Steven's tip calculator even more, this time using loops!
+
+
+YOUR TASKS:
+1. Create an array 'bills' containing all 10 test bill values.
+
+2. Create empty arrays for the tips and the totals ('tips' and 'totals').
+
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate
+tips and total values (bill + tip) for every bill value in the bills array. Use a for
+loop to perform the 10 calculations!.
+
+
+TEST DATA:
+Data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52.
+*/
+
+// 1.
+const billsArray = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+// 2.
+const tipsArray = [];
+const totalsArray = [];
+
+// 3.
+for (let i = 0; i < billsArray.length; i++) {
+    tipsArray.push(calcTip(billsArray[i]));
+    totalsArray.push(tipsArray[i] + billsArray[i]);
+}
+
+console.log(tipsArray);
+console.log(totalsArray);
+
+// 4. 4.1.
+let sum = 0;
+for (let i = 0; i < totalsArray.length; i++) {
+    sum += totalsArray[i];
+}
+console.log(sum);
+
+// 4.2.
+const calcAverage = function(arr) {
+    return sum / arr.length;
+}
+
+// 4.3.
+const averageBills = calcAverage(totalsArray);
+console.log(averageBills);
