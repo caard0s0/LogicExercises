@@ -18,10 +18,14 @@ TEST DATA:
 Data: Test for bill values 275, 40 and 430.
 */
 
+console.log('--------------------------------------------');
+console.log('--------------- CHALLENGE #4 ---------------');
+console.log('--------------------------------------------');
+
 // 1.
 const bill = 40;
 const tip = bill >= 50 && bill <= 300 ? 0.15 * bill : 0.20 * bill;
-console.log(tip);
+console.log(`Tip amount: $${tip}`);
 
 // 2.
 console.log(`The bill was $${bill}, the tip was $${tip}, and the total value $${bill + tip}.`);
@@ -54,19 +58,27 @@ TEST DATA:
 Data: 125, 555 and 44.
 */
 
+console.log('--------------------------------------------');
+console.log('--------------- CHALLENGE #6 ---------------');
+console.log('--------------------------------------------');
+
 // 1.
 const calcTip = bill => bill >= 50 && bill <= 300 ? 0.15 * bill : 0.20 * bill;
-console.log(calcTip(100));
+console.log(`Tip amount: $${calcTip(100)}`);
 
 // 2.
 const bills = [125, 555, 44];
+console.log(`--------------- All bills ⬇️ ---------------`);
+console.log(bills);
 
 // 3.
-const tips = []; 
+const tips = [];
 
 for (let i = 0; i < bills.length; i++) {
     tips[i] = calcTip(bills[i]);
-}
+};
+
+console.log(`--------------- All tips ⬇️ ----------------`);
 console.log(tips);
 
 // 4.
@@ -74,7 +86,9 @@ const total = [];
 
 for (let i = 0; i < bills.length; i++) {
     total[i] = bills[i] + tips[i];
-}
+};
+
+console.log(`----------- Total bills + tips ⬇️ ----------`);
 console.log(total);
 
 
@@ -99,6 +113,10 @@ TEST DATA:
 Data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52.
 */
 
+console.log('--------------------------------------------');
+console.log('--------------- CHALLENGE #8 ---------------');
+console.log('--------------------------------------------');
+
 // 1.
 const billsArray = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
@@ -110,23 +128,26 @@ const totalsArray = [];
 for (let i = 0; i < billsArray.length; i++) {
     tipsArray.push(calcTip(billsArray[i]));
     totalsArray.push(tipsArray[i] + billsArray[i]);
-}
+};
 
+console.log(`---------- Array with all tips ⬇️ ----------`);
 console.log(tipsArray);
+
+console.log(`------- Array total bills + tips ⬇️ --------`);
 console.log(totalsArray);
 
 // 4. 4.1.
 let sum = 0;
 for (let i = 0; i < totalsArray.length; i++) {
     sum += totalsArray[i];
-}
-console.log(sum);
+};
+console.log(`Sum of all bills and tips: ${sum}`);
 
 // 4.2.
-const calcAverage = function(arr) {
+const calcAverage = function (arr) {
     return sum / arr.length;
-}
+};
 
 // 4.3.
 const averageBills = calcAverage(totalsArray);
-console.log(averageBills);
+console.log(`Average of sum of all bills and tips: ${averageBills}`);
