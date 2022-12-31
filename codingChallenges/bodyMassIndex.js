@@ -21,6 +21,7 @@ YOUR TASKS:
 TEST DATA:
 Data: Marks weights 78kg and is 1.69m tall. John weights 92kg and is 1.95m tall.
 */
+
 console.log('--------------------------------------------');
 console.log('--------------- CHALLENGE #1 ---------------');
 console.log('--------------------------------------------');

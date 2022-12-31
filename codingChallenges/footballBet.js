@@ -37,6 +37,10 @@ Data: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
 Then, call the function again with players from game.scored.
 */
 
+console.log('---------------------------------------------');
+console.log('--------------- CHALLENGE #10 ---------------');
+console.log('---------------------------------------------');
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -80,36 +84,49 @@ const game = {
 
 // 1.
 const [players1, players2] = [game.players[0], game.players[1]];
-console.log(players1, players2);
+console.log('---------- First Team ⬇️ -----------');
+console.log(players1);
+
+console.log('---------- Second Team ⬇️ ----------');
+console.log(players2);
 
 // 2.
 const [gk, ...fieldPlayers] = [...players1];
-console.log(gk, fieldPlayers);
+console.log('-------------------------------------');
+console.log(`GoalKeeper: ${gk}`);
+
+console.log('--------- Field Players ⬇️ ----------');
+console.log(fieldPlayers);
 
 // 3.
 const allPlayers = [...players1, ...players2];
+console.log('---------- All Players ⬇️ -----------');
 console.log(allPlayers);
 
 // 4.
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log('----- Players + Substitutes ⬇️ ------');
 console.log(players1Final);
 
 // 5.
 const { odds: { team1, x: draw, team2 } } = game;
-console.log(team1, draw, team2);
+console.log(`Odds - Team 1: ${team1}`);
+console.log(`Odds - Draw: ${draw}`);
+console.log(`Odds - Team 2: ${team2}`);
 
 // 6.
 const printGoals = function (...players) {
-  console.log(`${players.length} goals were scored.`);
-}
-printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+  console.log(`${players.length} Goals were scored.`);
+};
+
 printGoals(...game.scored);
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 
 // 7.
 team1 < team2 && console.log(`${game.team1} is more likely to win!`);
 team2 < team1 && console.log(`${game.team2} is more likely to win!`);
 
-console.log('///////////////////////////////////////////////////////////');
+
 
 // Coding Challenge #11
 
@@ -184,6 +201,10 @@ game, it will look like this:
 //   },
 // };
 
+console.log('---------------------------------------------');
+console.log('--------------- CHALLENGE #11 ---------------');
+console.log('---------------------------------------------');
+
 // 1.
 const goals = game.scored.entries();
 
@@ -198,26 +219,26 @@ const odds = Object.values(game.odds);
 let sum = 0;
 for (const odd of odds) {
   sum += odd;
-}
+};
 
 const average = sum / odds.length;
-console.log(average);
+console.log(`Average Odds: ${average.toFixed(2)}`);
 
 // 3.
 for (const [team, odd] of Object.entries(game.odds)) {
   const teamStr = team === 'x' ? 'draw' : game[team];
   const output = `Odd of victory ${teamStr}: ${odd}.`;
   console.log(output);
-}
+};
 
 // 4.
 const scorers = {};
 for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1)
-}
+};
 console.log(scorers);
 
-console.log('///////////////////////////////////////////////////////////');
+
 
 // Coding CHallenge #12
 
@@ -241,6 +262,10 @@ average, every 9 minutes" (keep in mind that a game has 90 minutes).
 4. Loop over 'gameEvents' and log each element to the console, marking
 whether it's in the first half or second half (after 45 min) of the game, like this: [FIRST HALF] 17: ⚽ GOAL.
 */
+
+console.log('---------------------------------------------');
+console.log('--------------- CHALLENGE #12 ---------------');
+console.log('---------------------------------------------');
 
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
@@ -267,10 +292,10 @@ console.log(gameEvents);
 // 3.
 const time = [...gameEvents.keys()].pop();
 const averageEvents = time / gameEvents.size;
-console.log(`An event happened, on average, every ${averageEvents} minutes`);
+console.log(`An event happened, on average, every ${averageEvents} minutes.`);
 
 // 4.
 for (const [min, event] of gameEvents.entries()) {
   const half = min <= 45 ? '[FIRST HALF]' : '[SECOND HALF]';
   console.log(`${half} ${min}: ${event}.`);
-}
+};
