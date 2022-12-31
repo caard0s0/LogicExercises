@@ -114,7 +114,7 @@ const mark = {
     calcBMI: function () {
         return this.mass / (this.height * this.height);
     }
-}
+};
 
 const markBMI = Number(mark.calcBMI().toFixed(2));
 console.log(`Mark's BMI: ${markBMI}`);
@@ -129,7 +129,7 @@ const john = {
     calcBMI: function () {
         return this.mass / (this.height * this.height);
     }
-}
+};
 
 const johnBMI = Number(john.calcBMI().toFixed(2));
 console.log(`John's BMI: ${johnBMI}`);
