@@ -18,12 +18,17 @@ Data 1: [17, 21, 23].
 Data 2: [12, 5, -5, 0, 4].
 */
 
+console.log('--------------------------------------------');
+console.log('--------------- CHALLENGE #9 ---------------');
+console.log('--------------------------------------------');
+
 // 1. 2.
 let output = [];
-const printForecast = function(arr) {
+const printForecast = function (arr) {
     for (let i = 0; i < arr.length; i++) {
         output += ` ... ${arr[i]}°C in ${i + 1} days`;
     }
+    console.log('---------- Weather Forecast ----------');
     console.log(output);
 }
 
