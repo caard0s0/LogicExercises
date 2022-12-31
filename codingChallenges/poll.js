@@ -45,6 +45,9 @@ Data 1: [5, 2, 3].
 Data 2: [1, 5, 3, 9, 6, 1].
 */
 
+console.log('---------------------------------------------');
+console.log('--------------- CHALLENGE #14 ---------------');
+console.log('---------------------------------------------');
 
 document.body.append(document.createElement('button'));
 
