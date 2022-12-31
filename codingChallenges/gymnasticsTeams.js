@@ -27,12 +27,16 @@ Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123.
 Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106.
 */
 
+console.log('--------------------------------------------');
+console.log('--------------- CHALLENGE #3 ---------------');
+console.log('--------------------------------------------');
+
 // 1.
 const dolphinsAverageScore = Number(((97 + 112 + 101) / 3).toFixed(2));
-console.log(dolphinsAverageScore);
+console.log(`Dolphins team score average: ${dolphinsAverageScore}`);
 
 const koalasAverageScore = Number(((109 + 95 + 123) / 3).toFixed(2));
-console.log(koalasAverageScore);
+console.log(`Koalas team score average: ${koalasAverageScore}`);
 
 // 2. 3. 4.
 if (dolphinsAverageScore > koalasAverageScore && dolphinsAverageScore > 100) {
@@ -78,22 +82,26 @@ Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49.
 Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27.
 */
 
+console.log('--------------------------------------------');
+console.log('--------------- CHALLENGE #5 ---------------');
+console.log('--------------------------------------------');
+
 // 1.
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
 // 2.
 const averageDolphins = calcAverage(85, 54, 41);
-console.log(averageDolphins);
+console.log(`Dolphins team score average: ${averageDolphins}`);
 
 const averageKoalas = calcAverage(23, 34, 27);
-console.log(averageKoalas);
+console.log(`Koalas team score average: ${averageKoalas}`);
 
 // 3. 4. 5.
-const checkWinner = function(avgDolphins, avgKoalas) {
+const checkWinner = function (avgDolphins, avgKoalas) {
     if (avgDolphins >= 2 * avgKoalas) {
-        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas}) 🎉`);
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas}). 🎉`);
     } else if (avgKoalas >= 2 * avgDolphins) {
-        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins}) 🎉`);
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins}). 🎉`);
     } else {
         console.log('No team wins!');
     }
