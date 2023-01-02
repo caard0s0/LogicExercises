@@ -297,5 +297,5 @@ console.log(`An event happened, on average, every ${averageEvents} minutes.`);
 // 4.
 for (const [min, event] of gameEvents.entries()) {
   const half = min <= 45 ? '[FIRST HALF]' : '[SECOND HALF]';
-  console.log(`${half} ${min}: ${event}.`);
+  console.log(`${half.padEnd(15)} ${min}: ${event}.`);
 };

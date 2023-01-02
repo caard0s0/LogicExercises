@@ -30,7 +30,7 @@ const printForecast = function (arr) {
     }
     console.log('---------- Weather Forecast ----------');
     console.log(output);
-}
+};
 
 printForecast([17, 21, 23]);
 // printForecast([12, 5, -5, 0, 4]);
