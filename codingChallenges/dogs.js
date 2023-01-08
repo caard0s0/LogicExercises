@@ -29,28 +29,37 @@ Data 1: Julia's data [3, 5, 2, 12, 7], Kate's data [4, 1, 15, 8, 3].
 Data 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4].
 */
 
+console.log('---------------------------------------------');
+console.log('--------------- CHALLENGE #16 ---------------');
+console.log('---------------------------------------------');
+
 const checkDogs = function (dogsJulia, dogsKate) {
     // 1.
     const dogsJuliaCopyCorrected = dogsJulia.slice();
     dogsJuliaCopyCorrected.splice(0, 1);
     dogsJuliaCopyCorrected.splice(-2);
 
+    console.log("---- array of Julia's dogs corrected ⬇️ ----");
+    console.log(dogsJuliaCopyCorrected);
+
     // 2.
     const allDogsAges = dogsJuliaCopyCorrected.concat(dogsKate);
+    console.log("------ array of all dogs ages ⬇️ ------");
+    console.log(allDogsAges);
 
     // 3.
     allDogsAges.forEach((dogAge, i) => {
         if (dogAge >= 3) {
-            console.log(`Dog number ${i + 1} is an adult, and is ${dogAge} years old`);
+            console.log(`Dog number ${i + 1} is an adult, and is ${dogAge} years old.`);
         } else {
-            console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+            console.log(`Dog number ${i + 1} is still a puppy 🐶.`);
         }
-    })
+    });
 };
 
 // 4.
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
-console.log('///////////////////////////////');
+console.log('////////////////////////////////////////////////////');
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
 
@@ -82,7 +91,9 @@ Data 1: [5, 2, 4, 1, 15, 8, 3].
 Data 2: [16, 6, 10, 5, 6, 1, 4].
 */
 
-console.log('///////////////////////////////');
+console.log('---------------------------------------------');
+console.log('--------------- CHALLENGE #17 ---------------');
+console.log('---------------------------------------------');
 
 const calcAverageHumanAge = function (ages) {
     // 1.
@@ -93,19 +104,23 @@ const calcAverageHumanAge = function (ages) {
             return 16 + dogAge * 4;
         }
     });
+    console.log('---------- Human ages ⬇️ ----------');
     console.log(humanAges);
 
     // 2.
     const adults = humanAges.filter(age => age >= 18);
+    console.log('---------- Only adults ⬇️ ----------');
     console.log(adults);
 
     // 3.
     const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+    console.log('---------- Average ⬇️ ----------');
     console.log(average);
 }
 
 // 4.
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+console.log('////////////////////////////////////////////////////');
 calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
 
@@ -122,7 +137,9 @@ Data 1: [5, 2, 4, 1, 15, 8, 3].
 Data 2: [16, 6, 10, 5, 6, 1, 4].
 */
 
-console.log('///////////////////////////////');
+console.log('---------------------------------------------');
+console.log('--------------- CHALLENGE #18 ---------------');
+console.log('---------------------------------------------');
 
 // 1.
 const calcAverageHumanAgeChaining = ages => ages
@@ -130,7 +147,9 @@ const calcAverageHumanAgeChaining = ages => ages
     .filter(age => age >= 18)
     .reduce((acc, age, _, arr) => acc + age / arr.length, 0);
 
+console.log('---------- Average ⬇️ ----------');
 console.log(calcAverageHumanAgeChaining([5, 2, 4, 1, 15, 8, 3]));
+console.log('---------- Average ⬇️ ----------');
 console.log(calcAverageHumanAgeChaining([16, 6, 10, 5, 6, 1, 4]));
 
 
@@ -188,7 +207,9 @@ current > (recommended * 0.90) && current < (recommended * 1.10).
 Basically, the current portion should be between 90% and 110% of the recommended portion.
 */
 
-console.log('///////////////////////////////////////////////');
+console.log('---------------------------------------------');
+console.log('--------------- CHALLENGE #19 ---------------');
+console.log('---------------------------------------------');
 
 const dogs = [
     { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
@@ -199,20 +220,24 @@ const dogs = [
 
 // 1.
 dogs.forEach(curObj => curObj.recommendedFood = Math.trunc((curObj.weight ** 0.75 * 28)));
+console.log('----- All dogs with recommended food ⬇️ -----');
 console.log(dogs);
 
 
 // 2.
 const sarahObj = dogs.find(curObj => curObj.owners.includes('Sarah'));
+console.log('---------- Sarah ⬇️ ----------');
 console.log(sarahObj);
 console.log(`Sarah's dog is eating too ${sarahObj.curFood > sarahObj.recommendedFood ? 'much' : 'little'}`);
 
 
 // 3.
 const ownersEatTooMuch = dogs.filter(curObj => curObj.curFood > curObj.recommendedFood).flatMap(curObj => curObj.owners);
+console.log('---------- dog owners who eat too much ⬇️ ----------');
 console.log(ownersEatTooMuch);
 
 const ownersEatTooLittle = dogs.filter(curObj => curObj.curFood < curObj.recommendedFood).flatMap(curObj => curObj.owners);
+console.log('--------- dog owners who eat too little ⬇️ ---------');
 console.log(ownersEatTooLittle);
 
 
@@ -222,18 +247,22 @@ console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
 
 
 // 5.
+console.log('----- if any dog eats the exact amount of food ⬇️ -----');
 console.log(dogs.some(curObj => curObj.curFood === curObj.recommendedFood));
 
 
 // 6.
 const checkEatingOkay = curObj => curObj.curFood > curObj.recommendedFood * 0.9 && curObj.curFood < curObj.recommendedFood * 1.10;
+console.log('----- if any dog eats the okay amount of food ⬇️ ------');
 console.log(dogs.some(checkEatingOkay));
 
 
 // 7.
+console.log('------ which dog eats the okay amount of food ⬇️ ------');
 console.log(dogs.filter(checkEatingOkay));
 
 
 // 8.
 const dogsSorted = dogs.slice().sort((a, b) => a.recommendedFood - b.recommendedFood);
+console.log('------------ all dogs in ascending order ⬇️ ------------');
 console.log(dogsSorted);
